@@ -132,3 +132,44 @@ class Program
         replaceVowels.Replace(inputWord);
     }
 }
+
+
+using System;
+
+class ArrangeLetters
+{
+    public void Arrange(string word)
+    {
+        // Convert the word to uppercase
+        string wordInCaps = word.ToUpper();
+
+        // Convert the string to a char array for sorting
+        char[] charArray = wordInCaps.ToCharArray();
+        
+        // Sort the char array
+        Array.Sort(charArray);
+        
+        // Convert the sorted char array back to a string
+        string sortedWord = new string(charArray);
+
+        // Print the results
+        Console.WriteLine($"Given word :- {word}");
+        Console.WriteLine($"Word in capital:- {wordInCaps}");
+        Console.WriteLine($"Word after sorting:- {sortedWord}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create an instance of ArrangeLetters
+        ArrangeLetters arrangeLetters = new ArrangeLetters();
+        
+        // Input word
+        string inputWord = "BaSIec";
+        
+        // Call the Arrange method with the input word
+        arrangeLetters.Arrange(inputWord);
+    }
+}

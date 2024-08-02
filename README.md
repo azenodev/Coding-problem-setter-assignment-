@@ -34,3 +34,45 @@ class Program
         Console.WriteLine("Output: " + modifiedStr);
     }
 }
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input name
+        Console.Write("Enter a name: ");
+        string inputName = Console.ReadLine();
+        
+        // Initialize an empty string to store the modified name
+        string modifiedName = string.Empty;
+        
+        // Iterate through each character in the input name
+        foreach (char c in inputName)
+        {
+            if (char.IsUpper(c))
+            {
+                // Convert uppercase to lowercase
+                modifiedName += char.ToLower(c);
+            }
+            else if (char.IsLower(c))
+            {
+                // Convert lowercase to uppercase
+                modifiedName += char.ToUpper(c);
+            }
+            else
+            {
+                // Keep non-alphabetic characters unchanged
+                modifiedName += c;
+            }
+        }
+        
+        // Print the original and modified names
+        Console.WriteLine("The name: " + inputName);
+        Console.WriteLine("New name: " + modifiedName);
+    }
+}
